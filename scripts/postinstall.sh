@@ -23,6 +23,8 @@ else
 	echo 'Unknown type of VM, not installing tools..'
 fi
 
+echo 'autoboot_delay="0"' >> /boot/loader.conf
+
 echo
 echo 'Setting up sudo..'
 pkg install -y sudo
