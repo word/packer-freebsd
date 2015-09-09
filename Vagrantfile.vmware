@@ -2,7 +2,6 @@
 Vagrant.configure("2") do |config|
   config.vm.guest = :freebsd
   config.vm.box = "FreeBSD-10.1"
-  config.vm.synced_folder ".", "/vagrant", type: "nfs"
   config.ssh.shell = "tcsh"
 
   config.vm.provider :vmware_fusion do |v|
