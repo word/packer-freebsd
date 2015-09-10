@@ -23,6 +23,10 @@ else
 	echo 'Unknown type of VM, not installing tools..'
 fi
 
+
+# Used for shared folders
+echo 'nfs_client_enable="YES"' >> /etc/rc.conf
+
 echo 'autoboot_delay="0"' >> /boot/loader.conf
 
 echo
