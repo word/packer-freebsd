@@ -62,15 +62,10 @@
       "disk_size": 20480,
       "guest_os_type": "",
       "type": "vmware-iso",
-      "guest_os_type": "freebsd",
-      "iso_url": "http://ftp.freebsd.org/pub/FreeBSD/releases/ISO-IMAGES/10.3/FreeBSD-10.3-RELEASE-i386-disc1.iso",
-<<<<<<< HEAD
-      "iso_checksum": "8329ee2ca4779892edbb001c303670d74642e4353e97d02f4521895023cacd5d",
-      "iso_checksum_type": "sha256",
-=======
-      "iso_checksum": "3846150e7c460ff77a3ceae913a625b811c88276c77d23335323eb0bf70fd953891538549823c662a318b3cd4b06f64b72fda95d5bb04e9e7314355444d6953d",
+      "guest_os_type": "freebsd-64",
+      "iso_url": "http://ftp.freebsd.org/pub/FreeBSD/releases/ISO-IMAGES/10.3/FreeBSD-10.3-RELEASE-amd64-disc1.iso",
+      "iso_checksum": "8137966d9b62eb4bf597b047a8a43ae9f9a06f23ab7c812f229d32cbfab5bb0cc27089dcfb5d233e50a18620b75606e31ff01bb3084517746664b3b3c46c9d04",
       "iso_checksum_type": "sha512",
->>>>>>> 41c9bc550632fa55b63af1c92111621e6054f3d2
       "ssh_username": "root",
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "30s",
@@ -90,13 +85,6 @@
         "<enter><wait>",
         "<enter><wait>",
         "<enter><wait>",
-        "<wait10>",
-        "<wait10>",
-        "<wait10>",
-        "<wait10>",
-        "<wait10>",
-        "<wait10>",
-        "<wait10>",
         "<wait10>",
         "<wait10>",
         "<wait10>",
@@ -145,15 +133,10 @@
       "disk_size": 20480,
       "guest_os_type": "",
       "type": "virtualbox-iso",
-      "guest_os_type": "FreeBSD",
-      "iso_url": "http://ftp.freebsd.org/pub/FreeBSD/releases/ISO-IMAGES/10.3/FreeBSD-10.3-RELEASE-i386-disc1.iso",
-<<<<<<< HEAD
-      "iso_checksum": "8329ee2ca4779892edbb001c303670d74642e4353e97d02f4521895023cacd5d",
-      "iso_checksum_type": "sha256",
-=======
-      "iso_checksum": "3846150e7c460ff77a3ceae913a625b811c88276c77d23335323eb0bf70fd953891538549823c662a318b3cd4b06f64b72fda95d5bb04e9e7314355444d6953d",
+      "guest_os_type": "FreeBSD_64",
+      "iso_url": "http://ftp.freebsd.org/pub/FreeBSD/releases/ISO-IMAGES/10.3/FreeBSD-10.3-RELEASE-amd64-disc1.iso",
+      "iso_checksum": "8137966d9b62eb4bf597b047a8a43ae9f9a06f23ab7c812f229d32cbfab5bb0cc27089dcfb5d233e50a18620b75606e31ff01bb3084517746664b3b3c46c9d04",
       "iso_checksum_type": "sha512",
->>>>>>> 41c9bc550632fa55b63af1c92111621e6054f3d2
       "ssh_username": "root",
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "30s",
@@ -170,7 +153,7 @@
   ],
   "post-processors": [
     {
-      "output": "FreeBSD-10.3-RELEASE-i386-{{.Provider}}.box",
+      "output": "FreeBSD-10.3-{{.Provider}}.box",
       "type": "vagrant",
       "override": {
         "vmware": {
