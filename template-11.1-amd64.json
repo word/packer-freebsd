@@ -1,0 +1,46 @@
+{
+  "builders": [
+    {
+      "boot_command": [
+        "2<enter><wait10><wait10><wait10>",
+        "<enter><wait>",
+        "mdmfs -s 100m md1 /tmp<enter><wait>",
+        "dhclient -l /tmp/dhclient.leases -p /tmp/dhclient.pid em0<enter><wait5>",
+        "fetch -o /tmp/installerconfig http://{{.HTTPIP}}:{{.HTTPPort}}/freebsd-11.0/installerconfig<enter><wait>",
+        "bsdinstall script /tmp/installerconfig && reboot<enter>"
+      ],
+      "boot_wait": "3s",
+      "http_directory": "http",
+      "disk_size": 20480,
+      "guest_os_type": "",
+      "type": "virtualbox-iso",
+      "guest_os_type": "FreeBSD_64",
+      "iso_url": "http://ftp.nl.freebsd.org/pub/FreeBSD/releases/ISO-IMAGES/11.1/FreeBSD-11.1-RELEASE-amd64-disc1.iso",
+      "iso_checksum": "ff4c749ea0aaaceedb2432ba3e0fd0c1b64f5a72141b1ec06b9ced52b5de0dbf",
+      "iso_checksum_type": "sha256",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "ssh_wait_timeout": "90s",
+      "shutdown_command": "sudo poweroff"
+    }
+  ],
+  "provisioners": [
+    {
+      "scripts": [
+        "scripts/postinstall-ng.sh"
+      ],
+      "type": "shell"
+    }
+  ],
+  "post-processors": [
+    {
+      "output": "FreeBSD-11.1-RELEASE-amd64-{{.Provider}}.box",
+      "type": "vagrant",
+      "override": {
+        "virtualbox": {
+          "vagrantfile_template": "./Vagrantfile.virtualbox"
+        }
+      }
+    }
+  ]
+}
